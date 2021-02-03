@@ -1,0 +1,104 @@
+------------------------------------------------ Modelagem de Dados  -----------------------------------------------
+
+SQL - Banco de da dados relacional
+NoSQL - Banco de dados não relacional
+
+Oque é relacional ? 
+È quando existe uma relação entre entidades de pertencer ou ter alguma referencia 
+
+
+    O Primary Key(id) não é gerado automaticamente, Referencia o nome é (Forgering Key)
+    1 - 1 - Relação um para um, existe quando uma entidade possui uma referencia de outra entidade e vice versa
+    1 - N - Relação um para N(infinito), existe quando uma entidade possui uma referencia outra entidade pode pussuir uma ou N da mesma
+    N - N -  Relação N para N(infinito), existe quando uma entidade pode pussuir muitas referencias de outra entidade pode pussuir uma ou N da mesma
+
+
+    Entidade(Entetity)(NOSQL - SQL) - Modelo(Model)(SQL - NOSQL) - Tabela(Table)(SQL) - Schema(Nosql)
+    User e o Book
+
+------------------------------------  SQL --------------------------------------------------------------------------------------------
+
+Banco Sql não trabalha com Objeto ou Array
+
+
+1- N  e também N - N
+
+|   User       |        |     Book          |     |     User-Books   |
+|    id        |        |     id            |     |     userId       |
+|    name      |        |     title         |     |     booksId      |
+|    password  |        |     publishedYear |     
+|    email     |        |     price         |     
+
+
+
+1 - 1
+
+|   User       |        |     Book          |
+|    id        |        |     id            |  
+|    name      |        |     title         |    
+|    password  |        |     publishedYear |     
+|    email     |        |     price         |     
+|    bookId    |        |     userId        |     
+
+
+
+
+
+------------------------------------------    NOSQL    ------------------------------------------------------------------------------
+
+Banco No sql Aceitam Object e Array
+
+
+1 - 1
+
+|   User       |        |     Book          |
+|    id        |        |     id            |
+|    name      |        |     title         |
+|    password  |        |     publishedYear |
+|    email     |        |     price         |
+|    bookId    |        |     userId        |
+
+bookId  = dasnd2932nsdsa
+
+OU 
+
+book = { 
+    id: 1233m
+    title: test
+    ....
+}
+
+|   User            |               |     Book          |
+|    id             |               |     id            |
+|    name           |               |     title         |
+|    password       |               |     publishedYear |
+|    email          |               |     price         |
+|    book(Objeto)   |               
+
+
+1- N  e também N - N
+
+|   User              |        |     Book          |
+|    id               |        |     id            |   
+|    name             |        |     title         |     
+|    password         |        |     publishedYear |     
+|    email            |        |     price         |     
+|    books =(Array)   |
+
+User = {
+    ...,
+    books: [
+        {}(Objeto),
+        {},
+        {}
+    ]
+}
+
+User = {
+    ...,
+    books: [
+      123(id),
+      321,
+      242
+    ]
+}
